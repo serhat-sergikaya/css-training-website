@@ -123,6 +123,11 @@ a {
   color: #fff;
 }
 
+.card--primary .badge--primary {
+  background: #126de4;
+  color: #fff;
+}
+
 @media screen and (min-width: 1024px) {
   .badge {
     font-size: 1.6rem;
@@ -332,39 +337,56 @@ a {
 
 /* Plans */
 
+.plan {
+  transition: transform 0.2s ease-out;
+}
+
+.plan:hover {
+  transform: scale(1.1);
+}
+.plan--popular:hover {
+  transform: scale(1.2);
+}
+
 .plan__name {
   font-weight: 600;
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: #fff;
   margin: 0;
 }
 
 .plan__price {
-  font-size: 6rem;
+  font-size: 3.5rem;
 }
 
 .plan__billing-cycle {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   opacity: 0.8;
   font-weight: 300;
-  margin-right: 1.5rem;
+  margin-right: 2rem;
+  margin-left: 0.5rem;
 }
 
 .plan__description {
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: block;
   letter-spacing: 1px;
   font-weight: 300;
 }
 
-.plan.list__item {
+.plan-list__item {
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
+  font-size: 1.4rem;
 }
 
 .plan .badge--small {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   padding: 0.5rem 1.5rem;
+}
+
+.plan--popular {
+  transform: scale(1.1);
 }
 
 .plan--popular .card__header {
@@ -373,11 +395,21 @@ a {
 
 .plan--popular .card__header::before {
   content: url(../images/popular.svg);
-  width: 40px;
+  width: 20px;
   display: inline-block;
   position: absolute;
-  top: -6px;
-  right: 5%;
+  top: -2px;
+  right: 3%;
+}
+
+.plan-button {
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+
+.plan-price-container {
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (min-width: 1024px) {
@@ -386,15 +418,18 @@ a {
   }
 
   .plan__price {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   .plan__billing-cycle {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+  }
+  .plan .badge--small {
+    font-size: 1.2rem;
   }
 
   .plan__description {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -471,7 +506,13 @@ a {
 
 @media screen and (min-width: 768px) {
   .grid--1x2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -710,7 +751,7 @@ a {
   }
 }
 
-/* Domain */
+/* Domain Block */
 
 .block-domain .input--group {
   border: none;
@@ -733,4 +774,15 @@ a {
   .block-domain__prices {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
+}
+
+/* Plans BLock */
+
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+
+.block-plans .plan {
+  max-width: 400px;
+  margin: 0 auto;
 }
