@@ -506,7 +506,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .grid--1x2 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -785,4 +785,33 @@ a {
 .block-plans .plan {
   max-width: 400px;
   margin: 0 auto;
+}
+
+/* Features */
+
+.feature {
+  margin: 10rem 0;
+  gap: 4rem;
+}
+
+.feature:first-of-type {
+  margin-top: 5rem;
+}
+.feature__image {
+  width: 100%;
+}
+
+.feature__details {
+  font-size: 2.4rem;
+  text-align: justify;
+}
+
+.feature__details > h3 {
+  margin: 1rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .feature:nth-of-type(even) .feature__details {
+    order: 2;
+  }
 }
