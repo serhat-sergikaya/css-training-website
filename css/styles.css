@@ -45,6 +45,7 @@ h2 {
 
 h3 {
   font-size: 3rem;
+  font-weight: 500;
 }
 
 p {
@@ -143,7 +144,6 @@ a {
 .list {
   padding-left: 0;
   list-style: none;
-  color: var(--color-heading);
 }
 
 .list--inline .list__item {
@@ -154,6 +154,7 @@ a {
 .list--tick {
   list-style-image: url(/images/tick.svg);
   padding-left: 3rem;
+  color: var(--color-heading);
 }
 
 .list--tick .list__item {
@@ -437,6 +438,7 @@ a {
 
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .media__img {
@@ -445,6 +447,7 @@ a {
 
 .media__body {
   margin: 0 2rem;
+  font-size: 2rem;
 }
 
 .media__heading {
@@ -640,16 +643,18 @@ a {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 
-.block--dark .block__heading {
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
   color: #fff;
 }
 
 .block--skewed-right {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 
 .block--skewed-left {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 .container {
@@ -721,10 +726,6 @@ a {
 }
 
 /* Hero */
-
-.hero {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
 
 .hero__heading {
   font-size: 5rem;
@@ -813,5 +814,22 @@ a {
 @media screen and (min-width: 768px) {
   .feature:nth-of-type(even) .feature__details {
     order: 2;
+  }
+}
+
+/* Showcase */
+
+.block-showcase__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+  .block-showcase__image {
+    width: auto;
+    max-width: 700px;
+    justify-self: end;
   }
 }
