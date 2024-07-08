@@ -296,7 +296,8 @@ a {
 .input--group .input {
   border: none;
   flex-grow: 1;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 4vw;
+  width: 0;
 }
 
 .input--group .btn {
@@ -531,8 +532,8 @@ a {
 
 .testimonial__image > .icon-container {
   position: absolute;
-  right: -32px;
-  top: 2rem;
+  right: 10px;
+  top: -3rem;
 }
 
 .testimonial__image > img {
@@ -548,6 +549,12 @@ a {
   .testimonial .quote {
     margin-left: 6rem;
   }
+
+  .testimonial__image > .icon-container {
+    position: absolute;
+    right: -32px;
+    top: 2rem;
+  }
 }
 
 /* Callout */
@@ -558,6 +565,9 @@ a {
   color: #fff;
   font-size: 2.4rem;
   text-align: center;
+  z-index: +1;
+  bottom: -5rem;
+  position: relative;
 }
 
 .callout--primary {
@@ -586,6 +596,12 @@ a {
   .callout .btn {
     justify-self: start;
     margin: 0 2rem;
+  }
+  .callout__heading {
+    font-size: 2.4rem;
+  }
+  .callout {
+    font-size: 1.5rem;
   }
 }
 
@@ -764,13 +780,17 @@ a {
 
 .block-domain__prices {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
   margin: 0 auto;
   justify-items: center;
   max-width: 800px;
+}
+
+.domain-highlighted {
+  font-size: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .block-domain__prices {
@@ -801,11 +821,11 @@ a {
 }
 .feature__image {
   width: 100%;
+  align-self: center;
 }
 
 .feature__details {
   font-size: 2.4rem;
-  text-align: justify;
 }
 
 .feature__details > h3 {
@@ -816,12 +836,20 @@ a {
   .feature:nth-of-type(even) .feature__details {
     order: 2;
   }
+  .feature__details {
+    font-size: 2.4rem;
+    text-align: justify;
+  }
 }
 
 /* Showcase */
 
 .block-showcase__image {
   width: 100%;
+}
+
+.showcase__benefits {
+  margin-left: 2rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -868,7 +896,7 @@ a {
 
 .footer__logo > img {
   width: 100%;
-  max-width: 200px;
+  max-width: 270px;
 }
 
 .footer a {
@@ -884,12 +912,12 @@ a {
   font-size: 2.1rem;
   color: #fff;
   opacity: 0.3;
-  margin-top: 3rem;
 }
 
 @media screen and (min-width: 768px) {
   .footer-sections {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
   }
 
   .footer .collapsible__chevron {
@@ -908,7 +936,6 @@ a {
   .footer__logo {
     order: -1;
     margin-top: 0;
-    margin-right: 10rem;
   }
 
   .footer__section {
@@ -921,6 +948,7 @@ a {
 
   .footer-list > li {
     font-size: 1.5rem;
+    margin: 0;
   }
 
   .footer__heading {
